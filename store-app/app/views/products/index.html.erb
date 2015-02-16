@@ -1,0 +1,53 @@
+<section id="deals" class="col-md-12">
+  <h2>Minute by Minute deals.. Just for you!</h2>
+  <hr class="daily_deals_title_line">
+  <h4>25% off for 'right now' only</h4>
+  <div class="row">
+    <% @daily_deals.each do |product| %>
+      <div class="daily_deals col-md-4">
+        <div class="daily_deals_title"><%= product.title %></div>
+        <hr>
+        <img src="<%= product.image %>" alt="" class="daily_deals_image_size">
+        <hr>
+        <div class="table_alignment">
+          <table>
+            <tr>
+              <td>Regular Price:</td>
+              <td class="price"><%= number_to_currency(product.price) %></td>
+            </tr>
+            <tr>
+              <td>Today's Price: </td>
+              <td class="discount_price"><%= number_to_currency(product.daily_discount_message) %></td>
+            </tr>
+          </table>
+        </div>
+        <button class="buy_button">BUY</button>
+      </div>
+    <% end %>
+  </div>
+</section>
+
+
+
+
+<hr>
+<h2><%= @discount_display %></h2>
+<section class="home_products col-md-12">
+  <% @products.each do |product| %>
+  <a href="/products/<%= product.id %>"><h2> <%= product.title %> </h2></a>
+  <h3 class="price"><%= number_to_currency(product.price) %> </h3>
+  <h4><%= product.description %></h4>
+  <img src="<%= product.image %>" alt="" width="150">
+  <hr>
+  <% end %>
+</section>
+
+<br>
+<br>
+
+<!-- <ul>
+@recipe.ingredient_list.split(",").each do ingredient
+<li> ingredient </li>
+</ul> -->
+
+

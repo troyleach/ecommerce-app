@@ -1,0 +1,25 @@
+<h2><%= @product.title %></h2>
+<h3><%= @product.discount_message %></h3>
+<img src="<%= @product.image %>" alt="" width="250">
+<h3>Price: <%= number_to_currency(@product.price) %> </h3>
+<br>
+<table>
+  <tr>
+    <td>Subtotal:</td>
+    <td class="price"><%= number_to_currency(@product.price) %></td>
+  </tr>
+  <tr>
+    <td>Tax at 9%:</td>
+    <td class="price  price_line"><%= number_to_currency(@product.tax_computation) %></td>
+  </tr>
+  <tr>
+    <td>Grand Total:</td>
+    <td class="price"><%= number_to_currency(@product.add_tax) %></td>
+  </tr>
+</table>
+<br>
+<a href="/"><button>HOME</button></a>
+<a href="/products/<%= @product.id %>/edit"><button>EDIT</button></a>
+
+<a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure you want to delete <%= @product.title %>"><button>DELETE</button></a>
+

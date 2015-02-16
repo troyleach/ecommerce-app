@@ -1,0 +1,42 @@
+<h2>Update Product</h2>
+
+<%= form_tag "/products/#{@product.id}", :method => :patch do %>
+
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price, number_to_currency(@product.price) %>
+  </div>
+
+  <div>
+    <%= label_tag :title %>
+    <%= text_field_tag :title, @product.title %>
+  </div>
+
+  <div>
+    <%= label_tag :image %>
+    <%= text_field_tag :image, @product.image %>
+  </div>
+
+  <div>
+    <%= label_tag :description %>
+    <%= text_field_tag :description, @product.description %>
+  </div>
+
+  <div>
+    <%= label_tag :category %>
+    <%= text_field_tag :category, @product.category %>
+  </div>
+
+  <div>
+    <%= label_tag :brand %>
+    <%= text_field_tag :brand, @product.brand %>
+  </div>
+<br>
+<br>
+  <%= submit_tag "Update Product" %>
+
+<% end %>
+
+<br>
+<br>
+<a href="/"><button>HOME</button></a>

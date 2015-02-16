@@ -1,0 +1,36 @@
+<section>
+
+<h2>Please add a Product</h2>
+
+<%= form_tag '/products' do %>
+
+  <div>
+    <%= label_tag :price %>
+    <%= text_field_tag :price %>
+  </div>
+<br>
+  <%= label_tag :title %>
+  <%= text_field_tag :title %>
+<br>
+  <%= label_tag :image %>
+  <%= text_field_tag :image %>
+<br>
+  <%= label_tag :description %>
+  <%= text_field_tag :description %>
+<br>
+  <%= label_tag :category %>
+  <%= text_field_tag :category %>
+<br>
+  <%= label_tag :brand %>
+  <%= text_field_tag :brand %>
+<br>
+  <%= submit_tag "Add Product" %>
+
+<% end %>
+
+</section>
+<!-- 
+  rails will allow you to add classes something like this.. but this doesn't work
+<%= text_field_tag :title, :class => "" %>
+-->
+

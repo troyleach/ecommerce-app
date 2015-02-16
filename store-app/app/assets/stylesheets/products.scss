@@ -1,0 +1,64 @@
+// Place all the styles related to the products controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#deals {
+  border: 2px solid gray;
+  background-color: #dddcc5;
+  width: 70%;
+  padding: 0 2.5%;
+  // margin-top: 2.5%;
+  // margin-bottom: 2.5%;
+  margin: 2.5% auto;
+  text-align: center;
+}
+
+.daily_deals {
+  border: 5px solid #dddcc5;
+  background-color: #ffffff;
+  height: 300px;
+  text-align: center;
+}
+
+.daily_deals_title {
+  border: none;
+  display: inline-block;
+  height: 30%;
+  font-size: 1.5em;
+  margin-bottom: 3px;
+}
+
+.daily_deals_title_line {
+
+}
+
+.daily_deals_image_size {
+  border: none;
+  height: 25%;
+  width: auto;
+  padding: 5px;
+}
+
+table td {
+  padding: 0 10px 0 0;
+}
+
+.table_alignment {
+  margin-top: 4%;
+  border: none;
+}
+
+.discount_price {
+  font-weight: 900;
+  font-style: oblique;
+  color: #D50F37;
+}
+
+.buy_button {
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.home_products {
+  float: left;
+}
