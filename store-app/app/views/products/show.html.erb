@@ -2,6 +2,25 @@
 <h3><%= @product.discount_message %></h3>
 <img src="<%= @product.image %>" alt="" width="250">
 <h3>Price: <%= number_to_currency(@product.price) %> </h3>
+<p>Vendor: <%= @product.vendor.name %></p>
+
+<p>using my method</p>
+<h3><%= @product_options.find_option %></h3>
+
+
+<!-- below works just fine -->
+<p>Sizes:</p>
+<% @sizes = @options.where(:product_id => @product.id).pluck(:name) %>
+
+<% @sizes.each do |size| %>
+<ul>
+  <li><%= size %></li>
+</ul>
+<% end %>
+
+
+
+
 <br>
 <table>
   <tr>
@@ -18,7 +37,7 @@
   </tr>
 </table>
 <br>
-<a href="/"><button>HOME</button></a>
+
 <a href="/products/<%= @product.id %>/edit"><button>EDIT</button></a>
 
 <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure you want to delete <%= @product.title %>"><button>DELETE</button></a>

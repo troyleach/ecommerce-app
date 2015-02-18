@@ -4,7 +4,7 @@
   <h4>25% off for 'right now' only</h4>
   <div class="row">
     <% @daily_deals.each do |product| %>
-      <div class="daily_deals col-md-4">
+      <div class="daily_deals col-md-4 col-sm-4">
         <div class="daily_deals_title"><%= product.title %></div>
         <hr>
         <img src="<%= product.image %>" alt="" class="daily_deals_image_size">
@@ -12,11 +12,11 @@
         <div class="table_alignment">
           <table>
             <tr>
-              <td>Regular Price:</td>
+              <td>Price:</td>
               <td class="price"><%= number_to_currency(product.price) %></td>
             </tr>
             <tr>
-              <td>Today's Price: </td>
+              <td>Now:</td>
               <td class="discount_price"><%= number_to_currency(product.daily_discount_message) %></td>
             </tr>
           </table>
