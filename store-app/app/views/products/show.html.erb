@@ -1,44 +1,43 @@
-<h2><%= @product.title %></h2>
-<h3><%= @product.discount_message %></h3>
-<img src="<%= @product.image %>" alt="" width="250">
-<h3>Price: <%= number_to_currency(@product.price) %> </h3>
-<p>Vendor: <%= @product.vendor.name %></p>
+<section class="row">
+  <div class="section_one col-md-6 col-sm-6">
+    <h2><%= @product.title %></h2>
+    <h3>Price: <%= number_to_currency(@product.price) %> </h3>
+    <img src="<%= @product.image %>" alt="" width="250">
+    <hr>
+    <h3><%= @product.discount_message %></h3>
+  </div>
 
-<p>using my method</p>
-<h3><%= @product_options.find_option %></h3>
+  <div class="product_information col-md-6 col-sm-6">
+    <div class="stuff" >
+    <% if @product.vendor %>
+      <p>Vendor: <%= @product.vendor.name %></p>
+      <% end %>
+      <p>Sizes:</p>
+      <% @product.product_options.each do |option| %>
+      <option><%= option.name %></option>
+      <% end %>
 
+      
+      <br>
+      <table>
+        <tr>
+          <td>Subtotal:</td>
+          <td class="price"><%= number_to_currency(@product.price) %></td>
+        </tr>
+        <tr>
+          <td>Tax at 9%:</td>
+          <td class="price  price_line"><%= number_to_currency(@product.tax_computation) %></td>
+        </tr>
+        <tr>
+          <td>Grand Total:</td>
+          <td class="price"><%= number_to_currency(@product.add_tax) %></td>
+        </tr>
+      </table>
+      <br>
+      <button class="buy_button">BUY</button>
+      <a href="/products/<%= @product.id %>/edit"><button class="buy_button">EDIT</button></a>
 
-<!-- below works just fine -->
-<p>Sizes:</p>
-<% @sizes = @options.where(:product_id => @product.id).pluck(:name) %>
-
-<% @sizes.each do |size| %>
-<ul>
-  <li><%= size %></li>
-</ul>
-<% end %>
-
-
-
-
-<br>
-<table>
-  <tr>
-    <td>Subtotal:</td>
-    <td class="price"><%= number_to_currency(@product.price) %></td>
-  </tr>
-  <tr>
-    <td>Tax at 9%:</td>
-    <td class="price  price_line"><%= number_to_currency(@product.tax_computation) %></td>
-  </tr>
-  <tr>
-    <td>Grand Total:</td>
-    <td class="price"><%= number_to_currency(@product.add_tax) %></td>
-  </tr>
-</table>
-<br>
-
-<a href="/products/<%= @product.id %>/edit"><button>EDIT</button></a>
-
-<a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure you want to delete <%= @product.title %>"><button>DELETE</button></a>
-
+      <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure you want to delete <%= @product.title %>"><button class="buy_button">DELETE</button></a>
+    </div>
+  </div>
+</section>
