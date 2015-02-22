@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_id: 
+  user_id: 
+  quantity: 
+  product_option_id: 
+  subtotal: 9.99
+  tax: 9.99
+  total: 9.99
+
+two:
+  product_id: 
+  user_id: 
+  quantity: 
+  product_option_id: 
+  subtotal: 9.99
+  tax: 9.99
+  total: 9.99

@@ -30,14 +30,16 @@ class ProductsController < ApplicationController
   end
 
   def create
-    Product.create({:price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :brand => params[:brand]})
+    vendor = Vendor.find_by(:name => params[:vendor_name])
+
+    Product.create({:price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :vendor => params[:vendor]})
+
     @new_product = Product.last
 
     flash[:success] = "This Product added"
     redirect_to "/products/#{@new_product.id}"
     # could do this redirect_to "/products/params[:id]"
   end
-
 
   def show
     if params[:id] == "random"
@@ -46,6 +48,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
     @options = ProductOption.all
+    @images = Image.all
   end
 
 
@@ -56,7 +59,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update({:price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :brand => params[:brand]})
+    @product.update({:price => params[:price], :title => params[:title], :image => params[:image], :description => params[:description], :category => params[:category], :vendor_id => params[:vendor_id]})
   end
   
 

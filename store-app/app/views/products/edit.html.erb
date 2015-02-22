@@ -4,7 +4,7 @@
 
   <div>
     <%= label_tag :price %>
-    <%= text_field_tag :price, number_to_currency(@product.price) %>
+    <%= text_field_tag :price, @product.price %>
   </div>
 
   <div>
@@ -28,8 +28,8 @@
   </div>
 
   <div>
-    <%= label_tag :brand %>
-    <%= text_field_tag :brand, @product.brand %>
+    <%= label_tag :vendor %>
+    <%= text_field_tag :vendor, @product.vendor.name %>
   </div>
 <br>
 <br>

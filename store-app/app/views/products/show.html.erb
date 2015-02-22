@@ -4,8 +4,18 @@
     <h3>Price: <%= number_to_currency(@product.price) %> </h3>
     <img src="<%= @product.image %>" alt="" width="250">
     <hr>
+
+    <section class="">
+      <% @images.each do |image| %>
+        <% if image.product_id == @product.id %>
+          <img src="<%= image.image_url %>" alt="" width="50">
+        <% end %>
+      <% end %>
+    </section>
     <h3><%= @product.discount_message %></h3>
   </div>
+
+
 
   <div class="product_information col-md-6 col-sm-6">
     <div class="stuff" >
@@ -17,7 +27,6 @@
       <option><%= option.name %></option>
       <% end %>
 
-      
       <br>
       <table>
         <tr>
@@ -34,10 +43,30 @@
         </tr>
       </table>
       <br>
-      <button class="buy_button">BUY</button>
+      <h4>Buy this product</h4>
+
+      <%= form_tag "/orders" do %>
+
+        <div>
+          <%= label_tag :quantity %>
+          <%= text_field_tag :quantity %>
+          <%= submit_tag "BUY NOW" %>
+        </div>
+          <%= hidden_field_tag :product_id, @product.id %>
+
+  
+      <% end %>
+    </div>
+    <hr>
+
+    
+    
+    
+
+      <!-- <button class="buy_button">BUY</button> -->
       <a href="/products/<%= @product.id %>/edit"><button class="buy_button">EDIT</button></a>
 
       <a href="/products/<%= @product.id %>" data-method="delete" rel="nofollow" data-confirm="Are you sure you want to delete <%= @product.title %>"><button class="buy_button">DELETE</button></a>
-    </div>
+      <hr>
   </div>
 </section>

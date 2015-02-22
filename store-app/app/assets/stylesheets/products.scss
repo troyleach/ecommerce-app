@@ -16,14 +16,14 @@
 .daily_deals {
   border: 5px solid #dddcc5;
   background-color: #ffffff;
-  height: 300px;
+  height: 315px;
   text-align: center;
 }
 
 .daily_deals_title {
   border: none;
   display: inline-block;
-  height: 30%;
+  height: 38%;
   font-size: 1.5em;
   margin-bottom: 3px;
 }
@@ -56,10 +56,11 @@ table td {
 
 .buy_button {
   border-radius: 5px;
-  margin: 10px;
+  margin: 1.5%;
 }
 
 .home_products {
+  // margin-bottom: 35%;
   float: left;
 }
 

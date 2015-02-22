@@ -1,8 +1,11 @@
+* {
+  margin: 0;
+}
 
-
-body {
+html, body {
   background-color: #dddcc5;
-  font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif; 
+  font-family: "Book Antiqua",Palatino,"Palatino Linotype","Palatino LT STD",Georgia,serif;
+  height: 100%;
 }
 
 .alert-success {
@@ -31,15 +34,27 @@ hr {
   background-color: #ffffff;
   width: 85%;
   margin-top: -30px;
+  margin-bottom: -30px;
+  min-height: 100%;
+    /* equal to footer height */
+  margin-bottom: -30px;
   
   // padding-top: 50px;
+}
+
+.container:after {
+  content: ".";
+  display: block;
+}
+
+.col-lg-12 {
+  max-width: 980px;
 }
 
 header {
   background-color: #101010;
   height: 150px;
   padding: 0 0 0 0; 
-
 }
 
 #logo {
@@ -48,7 +63,6 @@ header {
   position: absolute;
   padding: 5.6% 0 0 1.5%;
   margin-left: 80px;
-
 }
 
 .inner_e {
@@ -65,11 +79,20 @@ header {
 
 .luxury {
   font-family: 'Ruthie', cursive;
-  font-size: 5em;
+  font-size: 2em;
   color: #a0985e;
-  margin-left: 80%;
-  margin-top: 40px;
+  // margin-left: 80%;
+  // margin-top: 40px;
   display: inline-block;
+}
+
+.user_class {
+  font-family: 'Ruthie', cursive;
+  font-size: 2.2em;
+  color: #a0985e;
+  margin-left: 73%;
+  margin-top: 7.8%;
+  
 }
 
 .date {
@@ -82,12 +105,17 @@ header {
 }
 
 footer {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
   background-color: #1d2326;
-  color: #611427;
+  color: #958976;
   height: 160px;
   text-align: center;
 }
 
 footer p {
   font-style: oblique;
+  margin-top: 4%;
 }
+// color: #611427;

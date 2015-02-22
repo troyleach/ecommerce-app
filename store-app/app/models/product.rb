@@ -1,6 +1,8 @@
 class Product < ActiveRecord::Base
   belongs_to  :vendor
   has_many    :product_options
+  has_many    :orders
+  has_many    :images
 
   def discount_message
     if price < 2000
